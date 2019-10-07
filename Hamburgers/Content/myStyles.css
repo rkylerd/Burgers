@@ -1,0 +1,141 @@
+﻿body {
+}
+
+.keys {
+    width: 25px;
+    background-color: black;
+    color: white;
+}
+
+.values {
+    width: 25px;
+    
+}
+
+
+h2 {
+    color: black;
+    font-weight: bold;
+    text-decoration: underline;
+    text-align: center;
+}
+#graph-container {
+    border-left: solid black 3px;
+    border-bottom: solid black 3px;
+    min-height: 300px;
+    width:100%;
+    
+}
+.y-axis-nums {
+    display: block;
+    content: "";
+    min-height: 1.5px;
+    margin:auto;
+    max-height: 2px;
+
+    overflow: visible;
+    background-color: white;
+    font-weight: bold;
+    max-width: 40px;
+    width: 40px;
+    margin-right: 0;
+    text-align: right;
+
+}
+.main-content {
+    
+    background-color: white;
+    width: 75%;
+    min-width: 500px;
+    padding: 50px;
+    margin: auto;
+    
+    border-radius: 12px;
+
+}
+
+footer {
+    color: white;
+    background-color: rgba(0,0,0,.4);
+    min-height: 60px;
+    padding: 5px;
+
+}
+
+body {
+    background: url(http://s1.1zoom.me/b5050/648/Hamburger_French_fries_Knife_Vegetables_Beer_Black_540436_3840x2400.jpg) right;
+    background-size: cover;
+}
+
+.cols-8 {
+    /*width: 85%;*/
+    margin: auto;
+    display: grid;
+    grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+    background-color: white;
+}
+
+.col-1 {
+    width: 100%;
+    min-width: 50px;
+    margin-top: auto;
+    margin-left: auto;
+}
+
+.name-info > span {
+    display: block;
+    min-width: 100%;
+    text-align: center;
+    font-size: smaller;
+    color: black;
+}
+
+.one-unit {
+    display: block;
+    content: "";
+    min-height: 1.5px;
+    width: 20px;
+    margin:auto;
+    max-width: 20px;
+    max-height: 2px;
+    overflow: hidden;
+    
+}
+
+.all-black {
+    background-color: black;
+    color: black;
+}
+
+.blue {
+    background-color: #1c89cc;
+    color: #1c89cc;
+}
+
+.red {
+    background-color: #b12106;
+    color: #b12106;
+}
+
+.green {
+    background-color: #00bb00;
+    color: #00bb00;
+}
+
+.yellow {
+    background-color: #ffe135;
+    color: #ffe135;
+}
+
+.orange {
+    background-color: #ff8d00;
+    color: #ff8d00;
+}
+
+.navbar {
+    display: none;
+}
+
+.no-bg-color {
+    background-color: white !important;
+}

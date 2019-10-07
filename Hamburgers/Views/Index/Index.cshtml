@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/myStyles.css">
+</head>
+
+<!--The container in the middle of page-->
+<div class="main-content">
+    <h2>Burgers Consumed</h2>
+
+<!--Container in two columns (left is the y-axis units, right is the graph and the names of corresponding people)-->
+    <div style="display: grid; grid-template-columns: 15% 85%;">
+
+<!--left is the y-axis units-->
+        <div class="col-1" style="padding-bottom: 52px; text-align: left; margin-right: 0px; min-width: 5px; width: 90%;">
+            @for (int burgerCount = ViewBag.mostBurgersEaten; burgerCount >= 0; burgerCount--)
+            {
+                <!--Only output the y-axis nums if divisible by 50-->
+                if (burgerCount % 50 == 0)
+                {
+                    <!--Red zone-->
+                    if (burgerCount >= 200)
+                    {
+
+                        <div class="no-bg-color y-axis-nums red">@burgerCount-</div>
+                    }
+                    else if (burgerCount >= 150)
+                    {
+                        <!--Orange zone-->
+                        <div class="no-bg-color y-axis-nums orange">@burgerCount-</div>
+                    }
+                    else if (burgerCount >= 100)
+                    {
+                        <!--Yellow zone-->
+
+                        <div class="no-bg-color y-axis-nums yellow">@burgerCount-</div>
+                    }
+                    else if (burgerCount >= 50)
+                    {
+
+                        <!--Green zone-->
+                        <div class="no-bg-color y-axis-nums green">@burgerCount-</div>
+                    }
+                    else
+                    {
+                        <!--Blue zone-->
+                        <div class="no-bg-color y-axis-nums blue">@burgerCount-</div>
+                        
+                    }
+
+                }
+                else
+                {
+                    <!--No text necessary zone-->
+                    <div class="one-unit"></div>
+                }
+             }
+        </div>
+
+        <!--Container for right side of y-axis and all below x-axis-->
+        <div>
+
+            <div id="graph-container" style="width: 100%" class="cols-8">
+
+                <!--To mimic a graph, iterate through burgers eaten for each person, adding blocks of 1.5px height until finished-->
+                @foreach (KeyValuePair<string, int> customerBurgerNum in ViewBag.customerinfo)
+                {
+                    <div class="col-1" style="min-width: 40px;">
+
+                        <div style="text-align: center;">@customerBurgerNum.Value</div>
+
+
+                        <!--Color code the graph lines based on quantity of burgers eaten (red most, orange, yellow, green, then blue for least)-->
+                        @for (int burgerCount = 0; burgerCount < @customerBurgerNum.Value; burgerCount++)
+                        {
+                            if (customerBurgerNum.Value >= 200)
+                            {
+
+                                <div class="one-unit red"></div>
+                            }
+                            else if (customerBurgerNum.Value >= 150)
+                            {
+
+                                <div class="one-unit orange"></div>
+                            }
+                            else if (customerBurgerNum.Value >= 100)
+                            {
+
+                                <div class="one-unit yellow"></div>
+                            }
+                            else if (customerBurgerNum.Value >= 50)
+                            {
+
+                                <div class="one-unit green"></div>
+                            }
+                            else
+                            {
+                                <div class="one-unit blue"></div>
+                            }
+                        }
+
+                    </div>
+                }
+            </div>
+            <!--Output the names of each person as x-axis -->
+            <div class="cols-8">
+                @foreach (KeyValuePair<string, int> customerBurgerNum in ViewBag.customerinfo)
+                {
+                    <div class="col-1" style="min-width: 40px; border: solid 1px black; min-height: 40px; font-weight: bold;">
+                        <div class="name-info">
+                            <span>@customerBurgerNum.Key</span>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
